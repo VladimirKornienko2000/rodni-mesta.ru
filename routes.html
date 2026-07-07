@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Турмаршруты — Родные места</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo" aria-label="Родные места">
+      <span class="logo-mark">РМ</span>
+      <span class="logo-text">Родные места</span>
+    </a>
+
+    <button class="burger" type="button" aria-label="Открыть меню">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav">
+      <a href="routes.html">Турмаршруты</a>
+      <a href="videoguides.html">Видеогиды</a>
+      <a href="index.html#contacts">Контакты</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="routes-hero">
+      <div class="container reveal">
+        <div class="badge">
+          <span></span>
+          Маршруты по Севастополю и Крыму
+        </div>
+
+        <h1>Турмаршруты</h1>
+
+        <p>
+          Выбирай маршрут под свое настроение: короткая прогулка, природный трек,
+          городское исследование или насыщенный путь на весь день.
+        </p>
+      </div>
+    </section>
+
+    <section class="container routes-page">
+      <div class="filters-panel reveal">
+        <div class="filters-top">
+          <div>
+            <span class="filters-label">Фильтр маршрутов</span>
+            <h2>Подбери свой маршрут</h2>
+          </div>
+
+          <div class="routes-count">
+            Найдено: <strong id="routesCount">0</strong>
+          </div>
+        </div>
+
+        <div class="filters-grid">
+          <div class="filter-group">
+            <h3>Дальность</h3>
+            <div class="filter-options" data-filter="distance">
+              <button type="button" class="filter-btn active" data-value="all">Все</button>
+              <button type="button" class="filter-btn" data-value="2">2 км</button>
+              <button type="button" class="filter-btn" data-value="5">5 км</button>
+              <button type="button" class="filter-btn" data-value="10">10 км</button>
+              <button type="button" class="filter-btn" data-value="20">20 км</button>
+              <button type="button" class="filter-btn" data-value="40">40 км</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h3>Местность</h3>
+            <div class="filter-options" data-filter="terrain">
+              <button type="button" class="filter-btn active" data-value="all">Все</button>
+              <button type="button" class="filter-btn" data-value="городская">Городская</button>
+              <button type="button" class="filter-btn" data-value="природная">Природная</button>
+              <button type="button" class="filter-btn" data-value="смешанная">Смешанная</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h3>Сложность</h3>
+            <div class="filter-options" data-filter="difficulty">
+              <button type="button" class="filter-btn active" data-value="all">Все</button>
+              <button type="button" class="filter-btn" data-value="легкий">Легкий</button>
+              <button type="button" class="filter-btn" data-value="средний">Средний</button>
+              <button type="button" class="filter-btn" data-value="сложный">Сложный</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h3>Длительность</h3>
+            <div class="filter-options" data-filter="durationDays">
+              <button type="button" class="filter-btn active" data-value="all">Все</button>
+              <button type="button" class="filter-btn" data-value="1">1 день</button>
+              <button type="button" class="filter-btn" data-value="2">2 дня</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="routes-grid" id="routesGrid"></div>
+
+      <div class="empty-state" id="emptyState">
+        По выбранным фильтрам маршрутов пока нет.
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="routeModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+
+    <div class="modal-window" role="dialog" aria-modal="true">
+      <button class="modal-close" type="button" aria-label="Закрыть окно" data-close-modal>
+        ×
+      </button>
+
+      <div class="modal-content">
+        <div class="modal-info">
+          <span class="modal-kicker">Маршрут</span>
+          <h2 id="modalTitle"></h2>
+          <p id="modalDescription"></p>
+
+          <div class="modal-stats" id="modalStats"></div>
+        </div>
+
+        <div class="modal-map" id="modalMap"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 «Родные места» · Молодежный туризм в Севастополе и Крыму</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
