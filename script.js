@@ -413,3 +413,47 @@ if (routesGrid && routesCount && emptyState && routeModal) {
 
   renderRoutes();
 }
+/* Videoguides page */
+const videoModal = document.querySelector("#videoModal");
+const videoModalPlayer = document.querySelector("#videoModalPlayer");
+
+if (videoModal && videoModalPlayer) {
+  document.querySelectorAll(".video-tile").forEach((tile) => {
+    tile.addEventListener("click", () => {
+      const oid = tile.dataset.oid;
+      const id = tile.dataset.id;
+
+      videoModalPlayer.innerHTML = `
+        <iframe
+          src="https://vk.com/video_ext.php?oid=${oid}&id=${id}&hd=2&autoplay=1"
+          width="100%"
+          height="100%"
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      `;
+
+      videoModal.classList.add("active");
+      videoModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  function closeVideoModal() {
+    videoModal.classList.remove("active");
+    videoModal.setAttribute("aria-hidden", "true");
+    videoModalPlayer.innerHTML = "";
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll("[data-close-video-modal]").forEach((button) => {
+    button.addEventListener("click", closeVideoModal);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && videoModal.classList.contains("active")) {
+      closeVideoModal();
+    }
+  });
+}
