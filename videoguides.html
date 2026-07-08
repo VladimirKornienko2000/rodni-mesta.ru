@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Видеогиды — Родные места</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo" aria-label="Родные места">
+      <span class="logo-mark">РМ</span>
+      <span class="logo-text">Родные места</span>
+    </a>
+
+    <button class="burger" type="button" aria-label="Открыть меню">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav">
+      <a href="routes.html">Турмаршруты</a>
+      <a href="videoguides.html">Видеогиды</a>
+      <a href="index.html#contacts">Контакты</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero video-page-hero">
+      <div class="decor-line line-one"></div>
+      <div class="decor-line line-two"></div>
+      <div class="floating-dot dot-one"></div>
+      <div class="floating-dot dot-two"></div>
+      <div class="floating-dot dot-three"></div>
+
+      <div class="container">
+        <div class="section-heading reveal">
+          <span>Видеогиды</span>
+          <h1>Смотри маршруты и места в видеоформате</h1>
+          <p>
+            Подборка видеогидов проекта «Родные места». Нажми на карточку, чтобы открыть ролик во всплывающем окне.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container videoguides-block">
+      <div class="videos-grid" id="videosGrid">
+        <button
+          class="video-tile reveal"
+          type="button"
+          data-oid="141708176"
+          data-id="456241036"
+          aria-label="Открыть видеогид ВКонтакте"
+        >
+          <div class="video-preview">
+            <iframe
+              src="https://vk.com/video_ext.php?oid=141708176&id=456241036&hd=2"
+              width="100%"
+              height="100%"
+              allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+              frameborder="0"
+              loading="lazy"
+              tabindex="-1"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </button>
+
+        <button
+          class="video-tile reveal"
+          type="button"
+          data-oid="141708176"
+          data-id="456241033"
+          aria-label="Открыть видеогид ВКонтакте"
+        >
+          <div class="video-preview">
+            <iframe
+              src="https://vk.com/video_ext.php?oid=141708176&id=456241033&hd=2"
+              width="100%"
+              height="100%"
+              allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+              frameborder="0"
+              loading="lazy"
+              tabindex="-1"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </button>
+
+        <button
+          class="video-tile reveal"
+          type="button"
+          data-oid="141708176"
+          data-id="456240712"
+          aria-label="Открыть видеогид ВКонтакте"
+        >
+          <div class="video-preview">
+            <iframe
+              src="https://vk.com/video_ext.php?oid=141708176&id=456240712&hd=2"
+              width="100%"
+              height="100%"
+              allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+              frameborder="0"
+              loading="lazy"
+              tabindex="-1"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </button>
+
+        <button
+          class="video-tile reveal"
+          type="button"
+          data-oid="141708176"
+          data-id="456240355"
+          aria-label="Открыть видеогид ВКонтакте"
+        >
+          <div class="video-preview">
+            <iframe
+              src="https://vk.com/video_ext.php?oid=141708176&id=456240355&hd=2"
+              width="100%"
+              height="100%"
+              allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+              frameborder="0"
+              loading="lazy"
+              tabindex="-1"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <div class="video-modal" id="videoModal" aria-hidden="true">
+    <button class="video-modal-backdrop" type="button" data-close-video-modal aria-label="Закрыть видео"></button>
+
+    <div class="video-modal-content" role="dialog" aria-modal="true" aria-label="Видеогид ВКонтакте">
+      <button class="video-modal-close" type="button" data-close-video-modal aria-label="Закрыть">×</button>
+      <div class="video-modal-player" id="videoModalPlayer"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2026 Мультиплатформенная программа развития внутреннего молодежного туризма «Родные места»</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
