@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Курс по туризму и медиа — Родные места</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo" aria-label="Родные места">
+      <span class="logo-mark">РМ</span>
+      <span class="logo-text">Родные места</span>
+    </a>
+
+    <button class="burger" type="button" aria-label="Открыть меню">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav">
+      <a href="routes.html">Турмаршруты</a>
+      <a href="videoguides.html">Видеогиды</a>
+      <a href="course.html">Курс</a>
+      <a href="index.html#contacts">Контакты</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero course-hero">
+      <div class="decor-line line-one"></div>
+      <div class="decor-line line-two"></div>
+      <div class="floating-dot dot-one"></div>
+      <div class="floating-dot dot-two"></div>
+      <div class="floating-dot dot-three"></div>
+
+      <div class="container">
+        <div class="section-heading reveal">
+          <span>Курс</span>
+          <h1>Курс по туризму и медиа</h1>
+          <p>
+            50 видеоуроков о том, как стать гидом и рассказывать о родных местах на камеру:
+            от основ туризма до съёмки и монтажа собственных видеогидов.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container course-page">
+      <div class="filters-panel reveal">
+        <div class="filters-top">
+          <div>
+            <span class="filters-label">Фильтр по направлению</span>
+            <h2>Выбери блок курса</h2>
+          </div>
+
+          <div class="routes-count">
+            Найдено: <strong id="courseCount">0</strong>
+          </div>
+        </div>
+
+        <div class="filters-grid">
+          <div class="filter-group">
+            <h3>Направление</h3>
+            <div class="filter-options" data-filter="direction">
+              <button type="button" class="filter-btn active" data-value="all">Все</button>
+              <button type="button" class="filter-btn" data-value="Туризм">Туризм</button>
+              <button type="button" class="filter-btn" data-value="Медиа">Медиа</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="courseGrid"></div>
+    </section>
+  </main>
+
+  <div class="modal" id="courseModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-course-modal></div>
+
+    <div class="modal-window" role="dialog" aria-modal="true">
+      <button class="modal-close" type="button" aria-label="Закрыть окно" data-close-course-modal>
+        ×
+      </button>
+
+      <div class="modal-content">
+        <div class="modal-info">
+          <span class="modal-kicker" id="courseModalKicker"></span>
+          <h2 id="courseModalTitle"></h2>
+          <p id="courseModalDescription"></p>
+        </div>
+
+        <div class="modal-map" id="courseModalPlayer"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2026 Мультиплатформенная программа развития внутреннего молодежного туризма «Родные места»</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
